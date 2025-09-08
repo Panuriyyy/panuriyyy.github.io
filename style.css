@@ -1,0 +1,139 @@
+body {
+            font-family: "Helvetica light", "Helvetica" Arial, sans-serif;
+            background-color: #7C170D;
+            color: #FFF;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #D9A577;
+        }
+        
+        h1 {
+            font-family: 'Berold', serif;
+            font-size: 48px;
+            color: #F2D4AE;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(217, 165, 119, 0.1);
+            border-radius: 10px;
+        }
+        
+        .cats-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        
+        .cat-card {
+            display: flex;
+            align-items: center;
+            background: rgba(217, 165, 119, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cat-info {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .cat-name {
+            font-family: 'Berold', serif;
+            font-size: 32px;
+            color: #F2D4AE;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #D9A577;
+            padding-bottom: 10px;
+        }
+        
+        .cat-desc {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .cat-duties {
+            font-style: italic;
+            color: #D9A577;
+        }
+        
+        .cat-image {
+            flex: 1;
+            max-width: 400px;
+            padding: 20px;
+        }
+        
+        .cat-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+        }
+        
+        .cat-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        .left {
+            flex-direction: row;
+        }
+        
+        .right {
+            flex-direction: row-reverse;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 3px solid #D9A577;
+            font-size: 16px;
+            color: #D9A577;
+        }
+        
+        @media (max-width: 900px) {
+            .cat-card {
+                flex-direction: column;
+            }
+            
+            .left, .right {
+                flex-direction: column;
+            }
+            
+            .cat-image {
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+        }

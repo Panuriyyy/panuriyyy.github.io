@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эрмитажные коты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berold:ital@0;1&display=swap" rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Эрмитажные коты</h1>
+            <p>Официальный сайт эрмитажных котов</p>
+        </header>
+        
+        <div class="intro">
+            <p>Эрмитажные коты — это не просто питомцы, а настоящие сотрудники Государственного Эрмитажа. 
+            Они несут важную службу по защите музейных ценностей от грызунов уже более 270 лет. 
+            Каждый кот имеет свой паспорт, ветеринарную карту и официальный статус "квалифицированного специалиста по очистке музейных подвалов от грызунов".</p>
+        </div>
+        
+        <div class="cats-container">
+            <div class="cat-card left">
+                <div class="cat-info">
+                    <h2 class="cat-name">Василий</h2>
+                    <p class="cat-desc">Василий — один из старейших и уважаемых котов Эрмитажа. Он служит в музее уже более 8 лет и прекрасно знает все потайные ходы и закоулки. Обладает спокойным и мудрым характером, часто наставляя younger коллег.</p>
+                    <p class="cat-duties">Обязанности: контроль за состоянием фондохранилищ, обучение молодых котов</p>
+                </div>
+                <div class="cat-image">
+                    <img src="https://i.pinimg.com/736x/4c/c8/bc/4cc8bc55cd92c9a73916c35f1396cf78.jpg" alt="Кот Василий">
+                </div>
+            </div>
+            
+            <div class="cat-card right">
+                <div class="cat-image">
+                    <img src="https://i.pinimg.com/originals/9a/02/b3/9a02b3915532d270fc8d68632334beef.jpg" alt="Кошка Марфа">
+                </div>
+                <div class="cat-info">
+                    <h2 class="cat-name">Марфа</h2>
+                    <p class="cat-desc">Марфа — элегантная кошка с изысканными манерами. Она прибыла в Эрмитаж 5 лет назад и быстро завоевала любовь сотрудников. Особенно хорошо она следит за порядком в залах европейского искусства.</p>
+                    <p class="cat-duties">Обязанности: патрулирование залов европейского искусства, дежурство в вестибюле</p>
+                </div>
+            </div>
+            
+            <div class="cat-card left">
+                <div class="cat-info">
+                    <h2 class="cat-name">Акакий</h2>
+                    <p class="cat-desc">Акакий — молодой и энергичный кот, который присоединился к команде 2 года назад. Несмотря на молодость, он уже проявил себя как отличный охотник. Обладает любознательным характером и часто исследует новые территории.</p>
+                    <p class="cat-duties">Обязанности: охрана новых поступлений, инспекция реставрационных мастерских</p>
+                </div>
+                <div class="cat-image">
+                    <img src="https://s0.rbk.ru/v6_top_pics/media/img/0/73/756142619838730.jpg" alt="Кот Акакий">
+                </div>
+            </div>
+            
+            <div class="cat-card right">
+                <div class="cat-image">
+                    <img src="https://img.ixbt.site/live/topics/preview/00/07/59/78/b992bbd4ef.jpg" alt="Кошка Елизавета">
+                </div>
+                <div class="cat-info">
+                    <h2 class="cat-name">Елизавета</h2>
+                    <p class="cat-desc">Елизавета — царственная особа с безупречными манерами. Она обожает проводить время в залах с тронными креслами и, кажется, считает себя прямой наследницей императорских котов. Работает в Эрмитаже 6 лет.</p>
+                    <p class="cat-duties">Обязанности: представительские функции, прием высоких гостей</p>
+                </div>
+            </div>
+            
+            <div class="cat-card left">
+                <div class="cat-info">
+                    <h2 class="cat-name">Петр</h2>
+                    <p class="cat-desc">Петр — крупный и важный кот, который считает себя главным по восточному крылу. Обладает громким голосом и требовательным характером. Несет службу в Эрмитаже 7 лет и прекрасно знает свои права и обязанности.</p>
+                    <p class="cat-duties">Обязанности: контроль восточного крыла, решение территориальных споров</p>
+                </div>
+                <div class="cat-image">
+                    <img src="https://i.pinimg.com/originals/3c/bc/e6/3cbce6653a5dde57419dd89615ac9eb2.jpg" alt="Кот Петр">
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Государственный Эрмитаж. Все права котохранителей защищены.</p>
+            <p>Сайт создан при поддержке Фонда эрмитажных котов</p>
+        </footer>
+    </div>
 
+    <script>
+        // Анимация появления блоков при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            const catCards = document.querySelectorAll('.cat-card');
+            
+            function checkVisibility() {
+                catCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0);
+                    
+                    if (isVisible) {
+                        card.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Проверяем при загрузке и при прокрутке
+            checkVisibility();
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+</body>
+</html>
