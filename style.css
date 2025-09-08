@@ -119,6 +119,55 @@ body {
             font-size: 16px;
             color: #D9A577;
         }
+
+        .hermitage-button-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hermitage-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #D9A577 0%, #BF7F3F 100%);
+    color: #7C170D;
+    text-decoration: none;
+    font-family: 'Berold', serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hermitage-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #BF7F3F 0%, #D9A577 100%);
+}
+
+.hermitage-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hermitage-button::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.hermitage-button:hover::before {
+    transform: translateX(100%);
+}
         
         @media (max-width: 900px) {
             .cat-card {

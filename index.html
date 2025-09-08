@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Эрмитажные коты</title>
-    <link href="https://fonts.googleapis.com/css2?family=Berold:ital@0;1&display=swap" rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Berold:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -75,6 +76,12 @@
                 </div>
             </div>
         </div>
+
+         <div class="hermitage-button-container">
+            <a href="https://www.hermitagemuseum.org/" target="_blank" class="hermitage-button">
+                На сайт Эрмитажа
+            </a>
+        </div>
         
         <footer>
             <p>© 2025 Государственный Эрмитаж. Все права котохранителей защищены.</p>
@@ -101,6 +108,41 @@
             // Проверяем при загрузке и при прокрутке
             checkVisibility();
             window.addEventListener('scroll', checkVisibility);
+    // Анимация появления блоков при прокрутке
+    document.addEventListener('DOMContentLoaded', function() {
+        const catCards = document.querySelectorAll('.cat-card');
+        
+        function checkVisibility() {
+            catCards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0);
+                
+                if (isVisible) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+        
+        // Проверяем при загрузке и при прокрутке
+        checkVisibility();
+        window.addEventListener('scroll', checkVisibility);
+        
+        // Код для черно-белого эффекта изображений
+        const catImages = document.querySelectorAll('.cat-image img');
+        
+        catImages.forEach(img => {
+            img.style.filter = 'grayscale(100%)';
+            img.style.transition = 'filter 0.5s ease';
+            
+            img.addEventListener('mouseenter', function() {
+                this.style.filter = 'grayscale(0%)';
+            });
+            
+            img.addEventListener('mouseleave', function() {
+                this.style.filter = 'grayscale(100%)';
+            });
+        });
+    });
         });
     </script>
 </body>
